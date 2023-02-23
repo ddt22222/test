@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" placeholder="nhap a" id="a"><br><br>
+    <input type="text" placeholder="nhap b" id="b"><br><br>
+    <button type="button" onclick="count()">Submit</button>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <script>
+        function isPrime(N){
+        let count = 0;
+        if(N<2){
+            return false;
+        }
+        else{
+            for (let i = 1; i <= N; i++){
+                if(N % i === 0){
+                    count+=1;
+                }
+            }
+            if(count==2){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
+        function countIsPrime(a,b){
+            var primes=[];
+            for(var n=a; n <= b; n++){          
+                if(isPrime(n)){
+                    primes.push(n);
+                    
+                }
+            }
+            return primes;
+        }
+
+
+        function count(){
+            var x = document.getElementById("a").value;
+            var y = document.getElementById("b").value;
+            
+            var primes = countIsPrime(x,y);
+            document.getElementById("demo").innerHTML = "Các số nguyên tố trong khoảng bạn nhập là:"+primes;
+        
+            var sumPrime = countIsPrime(x,y);
+            var sum = 0;
+            for (var i=0; i<sumPrime.length; i++){ 
+                sum += +sumPrime[i];
+            }
+            document.getElementById("demo2").innerHTML = "Tổng các số nguyên tố là: "+ primes.join("+") + "="+sum;
+            //---1 số cái k chạy
+            // var sum = sumPrime.reduce(getSum,0); 
+            // function getSum(total,num){
+            //     return total+num;
+            // };
+            //     document.getElementById("demo2").innerHTML = "Tổng các số nguyên tố là: "+ primes.join("+") + "="+  sum;
+            
+        }
+        </script>
+</body>
+</html>
