@@ -67,6 +67,7 @@
             //     document.getElementById("demo2").innerHTML = "Tổng các số nguyên tố là: "+ primes.join("+") + "="+  sum;
             
         }
+        // Test change
         </script>
 </body>
 </html>
